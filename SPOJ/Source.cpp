@@ -67,6 +67,12 @@ bool insert(struct TrieNode *root, const char *key)
 
 	// mark last node as leaf
 	pCrawl->isEndOfWord = true;
+	for (index = 0; index < ALPHABET_SIZE; index++) {
+		if (pCrawl->children[index]) {
+			ret = false;
+			break;
+		}
+	}
 	return ret;
 }
 
